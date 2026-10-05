@@ -10,3 +10,17 @@ Sun Oct  4 11:54:30 PM UTC 2026:
  tests:  0|6
 ========================================
 9649820
+Mon Oct  5 12:29:40 AM UTC 2026: 
+ graph.c | 18 +++++++++++++++---
+ 1 file changed, 15 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:40:25: error: implicit declaration of function ‘map_crate’; did you mean ‘map_create’? [-Wimplicit-function-declaration]
+   40 |     g -> adjacencyMap = map_crate(is_equal_string);
+      |                         ^~~~~~~~~
+      |                         map_create
+graph.c:40:23: error: assignment to ‘Map *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+   40 |     g -> adjacencyMap = map_crate(is_equal_string);
+      |                       ^
+1bf5c4b

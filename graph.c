@@ -12,13 +12,15 @@
  *         ESTRUCTURAS INTERNAS
  * ========================================= */
 
-struct Graph {
+struct Graph 
+{
     // Un solo mapa basta: Llave (char* label) -> Valor (List* de Edge*)
     Map* adjacencyMap; 
 };
 
 // Función auxiliar para comparar strings en el mapa
-int is_equal_string(void *key1, void *key2) {
+int is_equal_string(void *key1, void *key2) 
+{
     return strcmp((char*)key1, (char*)key2) == 0;
 }
 
@@ -26,8 +28,18 @@ int is_equal_string(void *key1, void *key2) {
  *         IMPLEMENTACIÓN
  * ========================================= */
 
-Graph* createGraph() {
-    return NULL;
+Graph* createGraph() 
+{
+    Graph* g = (Graph*) malloc (sizeof(Graph));
+
+    if (g == NULL)
+    {
+        return NULL;
+    }
+
+    g -> adjacencyMap = map_crate(is_equal_string);
+    
+    return g;
 }
 
 void addNode(Graph* g, const char* label) {
