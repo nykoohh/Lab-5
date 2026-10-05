@@ -37,7 +37,7 @@ Graph* createGraph()
         return NULL;
     }
 
-    g -> adjacencyMap = map_crate(is_equal_string);
+    g -> adjacencyMap = map_create(is_equal_string);
     
     return g;
 }
