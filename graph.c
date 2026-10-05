@@ -90,9 +90,7 @@ List* getEdges(Graph* g, const char* label)
 {
     if (!g || !label) return NULL;
 
-    List* edges = (List *)map_search(g->adjacencyMap, (void*)label);
-
-    return edges;
+    return (List*)map_search(g->adjacencyMap, (void*)label);
 }
 
 int getWeight(Graph* g, const char* label1, const char* label2) {
