@@ -59,8 +59,30 @@ void addNode(Graph* g, const char* label)
     map_insert(g->adjacencyMap, new_label, edges);
 }
 
-void addEdge(Graph* g, const char* src, const char* dest, int weight) {
+void addEdge(Graph* g, const char* src, const char* dest, int weight) 
+{
     if (!g || !src || !dest) return;
+
+    List* edges = (List*)map_search(g->adjacenctMap, (void*)src);
+
+    if (edges == NULL)
+    {
+        return;
+    }
+
+    Edge* new_edge = (Edge*)malloc(sizeof(Edge));
+    if (new_edge == NULL)
+    {
+        return;
+    }
+
+    new_edge->target = (char*)malloc(strlen(dest)+ 1);
+    strcpy(new_edge->target, dest);
+
+    new_edge -> weight = weight;
+
+    list_pushBack(edges, new_edge);
+    
 
 }
 
