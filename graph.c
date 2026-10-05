@@ -63,7 +63,7 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight)
 {
     if (!g || !src || !dest) return;
 
-    List* edges = (List*)map_search(g->adjacenctMap, (void*)src);
+    List* edges = (List*)map_search(g->adjacencyMap, (void*)src);
 
     if (edges == NULL)
     {
